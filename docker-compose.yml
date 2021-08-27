@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pact-demo-consumer:
+    image: consumer-pact
+    build: ./consumer
+    hostname: consumer-pact-demo
+    container_name: consumer-pact-demo
+
+  pact-demo-provider:
+    image: provider-pact
+    build: ./provider
+    hostname: provider-pact-demo
+    container_name: provider-pact-demo
+    ports:
+      - "50010:50010"

@@ -1,0 +1,45 @@
+{
+  "consumer": {
+    "name": "Consumer"
+  },
+  "provider": {
+    "name": "Provider"
+  },
+  "interactions": [
+    {
+      "providerState": "UserA exists",
+      "description": "a request for UserA",
+      "request": {
+        "method": "get",
+        "path": "/users/UserA"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "name": "UserA"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "providerState": "UserB does not exist",
+      "description": "a request for UserB",
+      "request": {
+        "method": "get",
+        "path": "/users/UserB"
+      },
+      "response": {
+        "status": 404
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

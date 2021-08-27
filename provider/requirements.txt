@@ -1,0 +1,6 @@
+Flask
+psutil
+pytest
+requests
+testcontainers
+pactman
